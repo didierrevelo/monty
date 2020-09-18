@@ -71,7 +71,44 @@ void _pint(stack_t **stack, unsigned int line_number)
 	if (run == NULL)
 	{
 		printf("L%d: can't pint, stack empty\n", line_number);
-		error_exit(stack);
+		err_ex(stack);
 	}
 	printf("%d\n", run->n);
+}
+
+/**
+ * _pop - delete item at top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ */
+void _pop(stack_t **stack, unsigned int line_number)
+{
+	if (*stack == NULL)
+	{
+		printf("L%d: can't pop an empty stack\n", line_number);
+		err_ex(stack);
+	}
+	delete_dnodeint_at_index(stack, 0);
+}
+
+/**
+ * _swap - swap top of stack and second top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ *
+ */
+void _swap(stack_t **stack, unsigned int line_number)
+{
+	stack_t *run;
+	int temp;
+
+	run = *stack;
+	if (run == NULL || run->next == NULL)
+	{
+		printf("L%d: can't swap, stack too short\n", line_number);
+		err_ex(stack);
+	}
+	temp = run->n;
+	run->n = run->next->n;
+	run->next->n = temp;
 }
