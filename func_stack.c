@@ -16,7 +16,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		err_ex(stack);
+		exit(EXIT_FAILURE);
 	}
 
 	arg = strtok(NULL, "\n ");
@@ -27,7 +27,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%d: usage: push integer\n", line_number);
-		err_ex(stack);
+		exit(EXIT_FAILURE);
 	}
 
 	if (flag == 1)
@@ -72,7 +72,7 @@ void _pint(stack_t **stack, unsigned int line_number)
 	if (run == NULL)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		err_ex(stack);
+		exit(EXIT_FAILURE);
 	}
 	fprintf(stdout, "%d\n", run->n);
 }
@@ -87,7 +87,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 	if (*stack == NULL)
 	{
 		fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-		err_ex(stack);
+		exit(EXIT_FAILURE);
 	}
 	delete_dnodeint_at_index(stack, 0);
 }
@@ -107,7 +107,7 @@ void _swap(stack_t **stack, unsigned int line_number)
 	if (run == NULL || run->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-		err_ex(stack);
+		exit(EXIT_FAILURE);
 	}
 	temp = run->n;
 	run->n = run->next->n;

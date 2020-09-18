@@ -13,9 +13,9 @@ int main(int ac, char **av)
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		err_ex(&stack);
+		exit(EXIT_FAILURE);
 	}
 	rfile(av[1], &stack);
 	free_dlistint(stack);
-	return (0);
+	exit(EXIT_SUCCESS);
 }

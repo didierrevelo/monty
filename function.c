@@ -33,7 +33,7 @@ void rfile(char *fname, stack_t **stack)
 		if (s == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", l_count, line);
-			err_ex(stack);
+			exit(EXIT_FAILURE);
 		}
 		s(stack, l_count);
 		l_count++;
