@@ -14,19 +14,22 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 	new = (stack_t *) malloc(sizeof(stack_t));
 	if (new == NULL)
 		return (NULL);
-	new->prev = NULL;
-	new->next = NULL;
-	new->n = n;
+
 	if (*head == NULL)
 	{
+		new->n = n;
+		new->next = NULL;
+		new->prev = NULL;
 		*head = new;
-		return (new);
+		return (*head);
 	}
 	else
 	{
 		(*head)->prev = new;
+		new->n = n;
 		new->next = *head;
+		new->prev = NULL;
 		*head = new;
-		return (new);
+		return (*head);;
 	}
 }
