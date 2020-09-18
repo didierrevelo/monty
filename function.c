@@ -33,7 +33,7 @@ void rfile(char *fname, stack_t **stack)
 		if (s == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n", l_count, line);
-			err_ex(stack);
+			exit(EXIT_FAILURE);
 		}
 		s(stack, l_count);
 		l_count++;
@@ -41,7 +41,7 @@ void rfile(char *fname, stack_t **stack)
 	free(buf);
 	check = fclose(file);
 	if (check == -1)
-		exit(-1);
+		exit(EXIT_FAILURE);
 }
 /**
  * get_func -  checks opcode and returns the correct function
