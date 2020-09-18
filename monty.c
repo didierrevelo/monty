@@ -16,5 +16,6 @@ int main(int ac, char **av)
 		exit(EXIT_FAILURE);
 	}
 	rfile(av[1], &stack);
+	free(stack);
 	exit(EXIT_SUCCESS);
 }
