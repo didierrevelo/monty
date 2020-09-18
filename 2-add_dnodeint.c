@@ -23,13 +23,11 @@ stack_t *add_dnodeint(stack_t **head, const int n)
 		*head = new;
 		return (*head);
 	}
-	else
-	{
-		(*head)->prev = new;
-		new->n = n;
-		new->next = *head;
-		new->prev = NULL;
-		*head = new;
-		return (*head);;
-	}
+
+	(*head)->prev = new;
+	new->n = n;
+	new->next = *head;
+	new->prev = NULL;
+	*head = new;
+	return (*head);
 }
