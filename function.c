@@ -73,8 +73,6 @@ instruct_f get_func(char *str)
 	return (instruct[i].f);
 }
 
-#include "monty.h"
-
 /**
  * get_line - parses a line for an opcode and arguments
  * @line: the line to be parsed
