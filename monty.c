@@ -15,7 +15,7 @@ int main(int ac, char **av)
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	rfile(av[1], stack);
+	rfile(av[1], &stack);
 	free_dlistint(stack);
 	exit(EXIT_SUCCESS);
 }
