@@ -32,6 +32,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	if (flag == 0)
 		add_dnodeint(stack, p_arg);
+	free(new_node);
 }
 
 /**

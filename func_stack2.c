@@ -7,14 +7,21 @@
  */
 void _add(stack_t **stack, unsigned int line_number)
 {
+	stack_t *aux_stack;
+
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		exit(EXIT_FAILURE);
+	aux_stack = *stack;
+	if (aux_stack->next == NULL)
+		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
+		exit(EXIT_FAILURE);
+	aux_stack->next->n += (*stack)->n;
+	*stack = (*stack)->next;
+	free(aux_stack);
+	(*stack)->prev = NULL;
 	}
-	(*stack)->next->n += (*stack)->n;
-	_pop(stack, line_number);
-	free(stack);
 }
 
 /**
