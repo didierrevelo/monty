@@ -66,22 +66,16 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
  * free_dlistint - this function free a list_t list
  * @head: values
  */
-void free_dlistint(stack_t *stack)
+void free_dlistint(stack_t *head)
 {
-	stack_t *aux_stack;
-
-	if (stack == NULL)
+	if (head == NULL)
 		return;
-	while (stack != NULL)
+	while (head->next != NULL)
 	{
-		aux_stack = stack->next;
-		free(stack);
-		if (aux_stack == NULL)
-			return;
-		aux_stack->prev = NULL;
-		stack = aux_stack;
+		head = head->next;
+		free(head->prev);
 	}
-	free(stack);
+	free(head);
 }
 
 /**
