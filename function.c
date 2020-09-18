@@ -59,6 +59,7 @@ instruct_f get_func(char *str)
 		{"swap", _swap},
 		{"add", _add},
 		{"nop", _nop},
+		{"sub", _sub},
 		{NULL, NULL},
 	};
 
