@@ -5,16 +5,16 @@
  * @av: opcode file
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(int ac, char **av)
 {
 	stack_t *stack;
 
 	stack = NULL;
-	if (argc != 2)
+	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
-	rfile(argv[1], &stack);
+	rfile(av[1], &stack);
 	exit(EXIT_SUCCESS);
 }
