@@ -18,7 +18,7 @@ void rfile(char *fname, stack_t **stack)
 
 	if (file == NULL)
 	{
-		fprintf(stderr,"Error: Can't open file %s\n", fname);
+		fprintf(stderr, "Error: Can't open file %s\n", fname);
 		err_ex(stack);
 	}
 	while ((read = getline(&buf, &i, file)) != -1)
@@ -32,7 +32,7 @@ void rfile(char *fname, stack_t **stack)
 		s = get_func(line);
 		if (s == NULL)
 		{
-			fprintf(stderr,"L%d: unknown instruction %s\n", l_count, line);
+			fprintf(stderr, "L%d: unknown instruction %s\n", l_count, line);
 			err_ex(stack);
 		}
 		s(stack, l_count);
