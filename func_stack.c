@@ -34,8 +34,6 @@ void _push(stack_t **stack, unsigned int line_number)
 	{
 		add_dnodeint(stack, p_arg);
 	}
-	else
-		add_dnodeint_end(stack, p_arg);
 }
 
 /**
