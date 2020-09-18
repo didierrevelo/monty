@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * error_exit - frees the stack and exits due to erro
+ * err_ex - frees the stack and exits due to erro
  * @stack: pointer to the head of the stack
  *
  */
