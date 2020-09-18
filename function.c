@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * read_file - reads a bytecode file and runs commands
+ * rfile - reads a bytecode file and runs commands
  * @fname: pathname to file
  * @stack: pointer to the top of the stack
  *
