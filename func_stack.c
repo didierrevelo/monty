@@ -1,4 +1,5 @@
 #include "monty.h"
+int flag = 0;
 /**
  * _push - push int to a stack
  * @stack: linked lists for monty stack
