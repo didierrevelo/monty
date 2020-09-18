@@ -9,7 +9,6 @@ void _push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new_node;
 	char *arg;
-	(void) line_number;
 	int p_arg;
 
 	p_arg = 0;
@@ -31,8 +30,6 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (*stack == NULL)
-		new_node->next = NULL;
 	if (flag == 0)
 	{
 		add_dnodeint(stack, p_arg);
