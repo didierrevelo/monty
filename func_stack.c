@@ -13,7 +13,7 @@ void _push(stack_t **stack, unsigned int line_number)
 
 	p_arg = 0;
 	new_node = malloc(sizeof(stack_t));
-	if (!new_node)
+	if (new_node == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
@@ -47,10 +47,13 @@ void _push(stack_t **stack, unsigned int line_number)
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs on
  */
-void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void _pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t *run;
+	(void) line_number;
 
+	if (stack == NULL)
+		exit(EXIT_FAILURE);
 	run = *stack;
 	while (run != NULL)
 	{
