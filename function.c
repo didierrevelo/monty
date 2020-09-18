@@ -12,7 +12,6 @@ void rfile(char *fname, stack_t **stack)
 	size_t i = 0;
 	int l_count = 1;
 	instruct_f s;
-	int check;
 	int read;
 	FILE *file = fopen(fname, "r");
 
@@ -38,10 +37,9 @@ void rfile(char *fname, stack_t **stack)
 		s(stack, l_count);
 		l_count++;
 	}
+	fclose(file);
 	free(buf);
-	check = fclose(file);
-	if (check == -1)
-		exit(EXIT_FAILURE);
+	free_dlistint(*stack);
 }
 /**
  * get_func -  checks opcode and returns the correct function
