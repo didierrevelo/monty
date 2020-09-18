@@ -8,7 +8,7 @@
 #include <ctype.h>
 
 extern int flag;
-int flag;
+int flag = 0;
 /*--- Struct Definitions ---*/
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
