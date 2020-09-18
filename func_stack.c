@@ -30,7 +30,7 @@ void _push(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	if (flag == 0)
+	if (flag == 1)
 	{
 		add_dnodeint(stack, p_arg);
 	}
