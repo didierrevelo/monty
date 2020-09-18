@@ -56,6 +56,10 @@ instruct_f get_func(char *str)
 	instruction_t instruct[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"nop", _nop},
 		{NULL, NULL},
 	};
 

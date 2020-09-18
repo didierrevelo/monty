@@ -40,6 +40,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	}
 
 }
+
 /**
  * _pall - print all function
  * @stack: pointer to linked list stack
@@ -55,4 +56,22 @@ void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 		printf("%d\n", run->n);
 		run = run->next;
 	}
+}
+/**
+ * _pint - print int a top of stack
+ * @stack: pointer to linked list stack
+ * @line_number: number of line opcode occurs on
+ *
+ */
+void _pint(stack_t **stack, unsigned int line_number)
+{
+	stack_t *run;
+
+	run = *stack;
+	if (run == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", line_number);
+		error_exit(stack);
+	}
+	printf("%d\n", run->n);
 }
